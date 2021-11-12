@@ -29,7 +29,6 @@ void criar_arquivo (struct disco_t& disco);
 void gravar_arquivo(struct disco_t& disco);
 void ler_arquivo   (struct disco_t& disco);
 void apagar_arquivo(struct disco_t& disco);
-void inserir_final_arquivo(struct disco_t& disco);
 
 void print_disco(struct disco_t& disco)
 {
@@ -150,9 +149,6 @@ void print_sistema(struct disco_t& disco)
     } else if(c == "4")
     {
         gravar_arquivo(disco);
-    } else if(c == "5")
-    {
-        inserir_final_arquivo(disco);
     }
 
 }
@@ -464,46 +460,6 @@ void apagar_arquivo(struct disco_t& disco)
 
 }
 
-
-void inserir_final_arquivo(struct disco_t& disco)
-{
-    system("clear");
-    print_disco(disco);
-
-    cout<<"\n [inserir no final do arquivo]\n";
-
-    cout<<" (1/1) nome: ";
-    string nome;
-    cin >> nome;
-
-    // Verificar se foi digitado "..". se for, retornar da função e voltar ao menu.
-    if(nome == ".."){ return; }
-
-    // Verificar se este arquivo já existe na tabela de diretorios
-    int arq_index = -1;
-
-    for(unsigned i=0;i<disco.tabela_dir.size();i++)
-    {
-        if(disco.tabela_dir[i] == nome)
-        {
-            arq_index = i;
-            break;
-        }
-    }
-
-    if(arq_index == -1)
-    {
-        cout<<"\n [!] Arquivo NAO encontrado.\n";
-        cout<< "\n Pressione uma tecla...";
-
-        getchar();
-        getchar();
-        return;
-    }
-
-    /// Falta continuar
-
-}
 
 
 int main()
