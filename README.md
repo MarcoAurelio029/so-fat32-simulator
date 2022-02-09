@@ -1,3 +1,3 @@
 # so-fat32-simulator
-Trabalho da cadeira de Sistemas Operacionais - UFC
+A software that simulates a FAT32 functionament at storage data. 
 
